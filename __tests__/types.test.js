@@ -3,6 +3,7 @@ const {
   isString,
   isArray,
   isObject,
+  isFunction,
   isBoolean,
   castToNumber,
   getCaster
@@ -49,6 +50,14 @@ describe('types functions', () => {
       expect(isObject('hi')).toBeFalsy();
       expect(isObject(3)).toBeFalsy();
       expect(isObject(() => {})).toBeFalsy();
+    });
+    it('properly tells if a value is a function', () => {
+      expect(isFunction(() => {})).toBeTruthy();
+      expect(isFunction({})).toBeFalsy();
+      expect(isFunction([])).toBeFalsy();
+      expect(isFunction(true)).toBeFalsy();
+      expect(isFunction('hi')).toBeFalsy();
+      expect(isFunction(3)).toBeFalsy();
     });
   });
 
