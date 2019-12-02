@@ -2,6 +2,7 @@ const {
   isNumber,
   isString,
   isArray,
+  isObject,
   isBoolean,
   castToNumber,
   getCaster
@@ -42,12 +43,12 @@ describe('types functions', () => {
       expect(isArray(() => {})).toBeFalsy();
     });
     it('properly tells if a value is an object', () => {
-      expect(isArray({})).toBeTruthy();
-      expect(isArray([])).toBeFalsy();
-      expect(isArray(true)).toBeFalsy();
-      expect(isArray('hi')).toBeFalsy();
-      expect(isArray(3)).toBeFalsy();
-      expect(isArray(() => {})).toBeFalsy();
+      expect(isObject({})).toBeTruthy();
+      expect(isObject([])).toBeFalsy();
+      expect(isObject(true)).toBeFalsy();
+      expect(isObject('hi')).toBeFalsy();
+      expect(isObject(3)).toBeFalsy();
+      expect(isObject(() => {})).toBeFalsy();
     });
   });
 
